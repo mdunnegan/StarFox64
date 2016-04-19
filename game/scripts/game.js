@@ -188,20 +188,16 @@ TerrainGenerator.prototype = {
 
 				// Function when resource is loaded
 				function ( geometry, material ) {
-
-
 					var object = new THREE.Mesh( geometry, material );
-
+					object.position.y = -150;
 					object.position.z = -zPos;
-					object.position.x = i;
-
-					//console.log("About to push to AT");
+					object.position.x = i-400;
+					object.scale.set(100,100,2);
 
 					AT.push(object);
 					AT.shift();
 					
 					scene.add(object);
-
 				}
 			);
 	    }
